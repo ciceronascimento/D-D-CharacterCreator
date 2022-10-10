@@ -22,6 +22,7 @@ class CardHomeCell: UICollectionViewCell {
         super.init(frame: .zero)
         
         contentView.addSubview(bg)
+        contentView.backgroundColor = .red
     }
     
     required init?(coder: NSCoder) {

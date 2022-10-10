@@ -32,7 +32,7 @@ class ExploreController: UIViewController {
         layout.itemSize = CGSize(width: 60, height: 60)
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         
-        collectionView?.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        collectionView?.register(CardHomeCell.self, forCellWithReuseIdentifier: "MyCell")
         collectionView?.dataSource = self
 //        collectionView?.delegate = self
         
@@ -70,7 +70,8 @@ extension ExploreController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         // dequeue the standard cell
-        let cell = CardHomeCell()
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
         //        let data = self.data[indexPath.item]
         //        cell.backgroundColor = data
         return cell
