@@ -10,13 +10,17 @@
 		DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAA28F4536A0003566F /* AppDelegate.swift */; };
 		DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAC28F4536A0003566F /* SceneDelegate.swift */; };
 		DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAE28F4536A0003566F /* ViewController.swift */; };
-		DDA57DB228F4536A0003566F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA57DB028F4536A0003566F /* Main.storyboard */; };
 		DDA57DB528F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DB328F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld */; };
 		DDA57DB728F4536B0003566F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA57DB628F4536B0003566F /* Assets.xcassets */; };
 		DDA57DBA28F4536B0003566F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA57DB828F4536B0003566F /* LaunchScreen.storyboard */; };
 		DDA57DC528F4536B0003566F /* D_D_CharacterCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DC428F4536B0003566F /* D_D_CharacterCreatorTests.swift */; };
 		DDA57DCF28F4536B0003566F /* D_D_CharacterCreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */; };
 		DDA57DD128F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */; };
+		DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE028F45AD60003566F /* CharacterModel.swift */; };
+		DDA57DE328F45AF60003566F /* API-notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE228F45AF60003566F /* API-notion.swift */; };
+		DDA57DE528F45B0E0003566F /* API-dnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE428F45B0E0003566F /* API-dnd.swift */; };
+		DDA57DE728F45BF10003566F /* CharacterSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE628F45BF10003566F /* CharacterSheetController.swift */; };
+		DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE928F45C140003566F /* CharacterSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +45,6 @@
 		DDA57DAA28F4536A0003566F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAC28F4536A0003566F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAE28F4536A0003566F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DDA57DB128F4536A0003566F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DDA57DB428F4536A0003566F /* D_D_CharacterCreator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = D_D_CharacterCreator.xcdatamodel; sourceTree = "<group>"; };
 		DDA57DB628F4536B0003566F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA57DB928F4536B0003566F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,11 @@
 		DDA57DCA28F4536B0003566F /* D&D-CharacterCreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D&D-CharacterCreatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITests.swift; sourceTree = "<group>"; };
 		DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DDA57DE028F45AD60003566F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
+		DDA57DE228F45AF60003566F /* API-notion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-notion.swift"; sourceTree = "<group>"; };
+		DDA57DE428F45B0E0003566F /* API-dnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-dnd.swift"; sourceTree = "<group>"; };
+		DDA57DE628F45BF10003566F /* CharacterSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheetController.swift; sourceTree = "<group>"; };
+		DDA57DE928F45C140003566F /* CharacterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +112,10 @@
 				DDA57DAA28F4536A0003566F /* AppDelegate.swift */,
 				DDA57DAC28F4536A0003566F /* SceneDelegate.swift */,
 				DDA57DAE28F4536A0003566F /* ViewController.swift */,
-				DDA57DB028F4536A0003566F /* Main.storyboard */,
+				DDA57DDF28F45ABA0003566F /* Controller */,
+				DDA57DE828F45BF60003566F /* View */,
+				DDA57DDE28F45AB30003566F /* Service */,
+				DDA57DDD28F45AAB0003566F /* Model */,
 				DDA57DB628F4536B0003566F /* Assets.xcassets */,
 				DDA57DB828F4536B0003566F /* LaunchScreen.storyboard */,
 				DDA57DBB28F4536B0003566F /* Info.plist */,
@@ -128,6 +139,39 @@
 				DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */,
 			);
 			path = "D&D-CharacterCreatorUITests";
+			sourceTree = "<group>";
+		};
+		DDA57DDD28F45AAB0003566F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDA57DE028F45AD60003566F /* CharacterModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDA57DDE28F45AB30003566F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DDA57DE228F45AF60003566F /* API-notion.swift */,
+				DDA57DE428F45B0E0003566F /* API-dnd.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DDA57DDF28F45ABA0003566F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DDA57DE628F45BF10003566F /* CharacterSheetController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DDA57DE828F45BF60003566F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DDA57DE928F45C140003566F /* CharacterSheetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +280,6 @@
 			files = (
 				DDA57DBA28F4536B0003566F /* LaunchScreen.storyboard in Resources */,
 				DDA57DB728F4536B0003566F /* Assets.xcassets in Resources */,
-				DDA57DB228F4536A0003566F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,8 +304,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA57DE528F45B0E0003566F /* API-dnd.swift in Sources */,
 				DDA57DB528F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld in Sources */,
+				DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */,
+				DDA57DE728F45BF10003566F /* CharacterSheetController.swift in Sources */,
 				DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */,
+				DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */,
+				DDA57DE328F45AF60003566F /* API-notion.swift in Sources */,
 				DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */,
 				DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */,
 			);
@@ -301,14 +349,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DDA57DB028F4536A0003566F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DDA57DB128F4536A0003566F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DDA57DB828F4536B0003566F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +486,6 @@
 				INFOPLIST_FILE = "D&D-CharacterCreator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -474,7 +513,6 @@
 				INFOPLIST_FILE = "D&D-CharacterCreator/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
