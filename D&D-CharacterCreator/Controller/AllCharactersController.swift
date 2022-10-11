@@ -21,7 +21,7 @@ class AllCharactersController: UIViewController {
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "All Characters"
+        navigationItem.title = "My Characters"
         backButton.title = "Voltar"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }

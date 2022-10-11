@@ -11,12 +11,16 @@ import SwiftUI
 class CardHomeCell: UICollectionViewCell {
     // pesquisar modificadores de acesso para classes, usar protocolo ou função para alterar texto
     var cardName: String = "Titulo card"
+    var imageName: String = "party"
+
     fileprivate let backGround: UIImageView = {
         let imgView = UIImageView()
         imgView.translatesAutoresizingMaskIntoConstraints = false
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 12
+        
+        imgView.image = UIImage(named: "party")
         imgView.backgroundColor = .red
         return imgView
     }()

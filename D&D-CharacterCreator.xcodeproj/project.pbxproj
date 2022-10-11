@@ -26,6 +26,7 @@
 		DDA57DF528F4ABC10003566F /* CardHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF428F4ABC10003566F /* CardHomeCell.swift */; };
 		DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF928F5B45B0003566F /* AllCharactersController.swift */; };
 		DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DFB28F5B4730003566F /* AllCharactersView.swift */; };
+		DDA57DFE28F5D0F10003566F /* CharacterCardCellCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DFD28F5D0F10003566F /* CharacterCardCellCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		DDA57DF428F4ABC10003566F /* CardHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHomeCell.swift; sourceTree = "<group>"; };
 		DDA57DF928F5B45B0003566F /* AllCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersController.swift; sourceTree = "<group>"; };
 		DDA57DFB28F5B4730003566F /* AllCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersView.swift; sourceTree = "<group>"; };
+		DDA57DFD28F5D0F10003566F /* CharacterCardCellCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCardCellCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA57DF428F4ABC10003566F /* CardHomeCell.swift */,
+				DDA57DFD28F5D0F10003566F /* CharacterCardCellCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */,
 				DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */,
 				DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */,
+				DDA57DFE28F5D0F10003566F /* CharacterCardCellCell.swift in Sources */,
 				DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
