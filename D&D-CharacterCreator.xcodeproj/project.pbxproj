@@ -24,6 +24,8 @@
 		DDA57DF028F4A9CF0003566F /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DEF28F4A9CF0003566F /* ExploreController.swift */; };
 		DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF128F4A9EA0003566F /* ExploreView.swift */; };
 		DDA57DF528F4ABC10003566F /* CardHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF428F4ABC10003566F /* CardHomeCell.swift */; };
+		DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF928F5B45B0003566F /* AllCharactersController.swift */; };
+		DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DFB28F5B4730003566F /* AllCharactersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		DDA57DEF28F4A9CF0003566F /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
 		DDA57DF128F4A9EA0003566F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		DDA57DF428F4ABC10003566F /* CardHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHomeCell.swift; sourceTree = "<group>"; };
+		DDA57DF928F5B45B0003566F /* AllCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersController.swift; sourceTree = "<group>"; };
+		DDA57DFB28F5B4730003566F /* AllCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +173,7 @@
 			children = (
 				DDA57DEB28F45D130003566F /* CharacterSheetController.swift */,
 				DDA57DEF28F4A9CF0003566F /* ExploreController.swift */,
+				DDA57DF928F5B45B0003566F /* AllCharactersController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				DDA57DF328F4AB730003566F /* Components */,
 				DDA57DE928F45C140003566F /* CharacterSheetView.swift */,
 				DDA57DF128F4A9EA0003566F /* ExploreView.swift */,
+				DDA57DFB28F5B4730003566F /* AllCharactersView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,7 +359,9 @@
 				DDA57DE328F45AF60003566F /* API-notion.swift in Sources */,
 				DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */,
 				DDA57DF028F4A9CF0003566F /* ExploreController.swift in Sources */,
+				DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */,
 				DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */,
+				DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */,
 				DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
