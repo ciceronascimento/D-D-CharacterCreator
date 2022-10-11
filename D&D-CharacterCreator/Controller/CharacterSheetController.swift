@@ -15,7 +15,7 @@ class CharacterSheetController: UIViewController {
     }
 
     func configNavBar() {
-        //adicionar no cbl, como modificar large titles
+        // adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
 //        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]

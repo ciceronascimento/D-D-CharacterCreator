@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class D_D_CharacterCreatorUITestsLaunchTests: XCTestCase {
+final class DnDCharacterCreatorUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

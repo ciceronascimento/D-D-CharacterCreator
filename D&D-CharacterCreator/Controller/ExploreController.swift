@@ -8,7 +8,6 @@
 import UIKit
 
 class ExploreController: UIViewController {
-    
     var collectionView: UICollectionView?
 
     private lazy var button: UIButton = {
@@ -20,60 +19,68 @@ class ExploreController: UIViewController {
         button.addTarget(self, action: #selector(callNewController), for: .touchUpInside)
         return button
     }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(button)
         configNavBar()
         buttonConstraints()
-        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        layout.itemSize = CGSize(width: 290, height: 110)
+        layout.scrollDirection = .vertical
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        
+        // adicionar no cbl o que significa reuse identifier
         collectionView?.register(CardHomeCell.self, forCellWithReuseIdentifier: "MyCell")
         collectionView?.dataSource = self
-//        collectionView?.delegate = self
-        
+        collectionView?.delegate = self
         view.addSubview(collectionView ?? UICollectionView())
-//        collectionView = UICollectionView(frame:.zero, collectionViewLayout: layout)
-//        self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionConstraints()
         view.backgroundColor = .white
     }
     func configNavBar() {
-        //adicionar no cbl, como modificar large titles
+        // adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
+        let backButton = UIBarButtonItem()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "D&D characters"
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
-    func buttonConstraints(){
+    func buttonConstraints() {
         NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            button.topAnchor.constraint(equalTo: collectionView?.bottomAnchor ?? view.topAnchor, constant: 640),
+            button.centerXAnchor.constraint(equalTo: collectionView?.centerXAnchor ?? view.centerXAnchor)
         ])
     }
-    
-    @objc func callNewController(){
+    func collectionConstraints() {
+        collectionView?.translatesAutoresizingMaskIntoConstraints = false
+        collectionView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        collectionView?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        collectionView?.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        collectionView?.widthAnchor.constraint(equalToConstant: 310).isActive = true
+    }
+    @objc func callNewController() {
         navigationController?.pushViewController(CharacterSheetController(), animated: true)
     }
 }
 
 extension ExploreController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
-        return 1
-        
+    func collectionView (_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2
     }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // dequeue the standard cell
-        
+    func collectionView (
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
-        //        let data = self.data[indexPath.item]
-        //        cell.backgroundColor = data
         return cell
+    }
+}
+
+extension ExploreController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Card: \(indexPath.row + 1)")
     }
 }

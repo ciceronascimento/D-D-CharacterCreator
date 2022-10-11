@@ -9,33 +9,49 @@ import UIKit
 import SwiftUI
 
 class CardHomeCell: UICollectionViewCell {
-    fileprivate let bg: UIImageView = {
-        let iv = UIImageView()
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.layer.cornerRadius = 12
-        return iv
+    // pesquisar modificadores de acesso para classes, usar protocolo ou função para alterar texto
+    var cardName: String = "Titulo card"
+    fileprivate let backGround: UIImageView = {
+        let imgView = UIImageView()
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        imgView.contentMode = .scaleAspectFill
+        imgView.clipsToBounds = true
+        imgView.layer.cornerRadius = 12
+        imgView.backgroundColor = .red
+        return imgView
     }()
-    
+    lazy fileprivate var label: UILabel = {
+       let label = UILabel()
+        label.text = cardName
+        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .white
+//        label.font = .preferredFont(forTextStyle: .title2)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     override init(frame: CGRect) {
         super.init(frame: .zero)
-        
-        contentView.addSubview(bg)
+        contentView.addSubview(backGround)
+        contentView.addSubview(label)
+        contentView.layer.cornerRadius = 15
         contentView.backgroundColor = .red
+        contentView.layer.shadowColor = UIColor(.black).cgColor
+        contentView.layer.shadowRadius = 10
+        setupConstraints()
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init() has not been implemented")
     }
-    
-    func setupConstraints(){
-        
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-            bg.topAnchor.constraint(equalTo: contentView.topAnchor),
-            bg.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            bg.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            bg.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            backGround.topAnchor.constraint(equalTo: contentView.topAnchor),
+            backGround.leftAnchor.constraint(equalTo: contentView.leftAnchor),
+            backGround.rightAnchor.constraint(equalTo: contentView.rightAnchor),
+            backGround.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            label.heightAnchor.constraint(equalToConstant: 120),
+            label.widthAnchor.constraint(equalToConstant: 120)
         ])
     }
 }

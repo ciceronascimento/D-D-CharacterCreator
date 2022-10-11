@@ -8,7 +8,13 @@
 import Foundation
 
 class CharacterModel {
-    internal init(name: String, race: String, subraces:String , classes: String, subClass: String, skills: [String], spells: String) {
+    internal init(name: String,
+                  race: String,
+                  subraces: String,
+                  classes: String,
+                  subClass: String,
+                  skills: [String],
+                  spells: String) {
         self.name = name
         self.race = race
         self.subraces = subraces
