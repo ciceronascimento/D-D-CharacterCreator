@@ -26,6 +26,7 @@ class ExploreController: UIViewController {
         view.addSubview(collectionView ?? UICollectionView())
         collectionConstraints()
         view.backgroundColor = .white
+        loadRequest()
     }
 
     func loadRequest() {

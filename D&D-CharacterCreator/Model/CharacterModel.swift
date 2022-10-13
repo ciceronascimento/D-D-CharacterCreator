@@ -7,27 +7,16 @@
 
 import Foundation
 
-class CharacterModel {
-    internal init(name: String,
-                  race: String,
-                  subraces: String,
-                  classes: String,
-                  subClass: String,
-                  skills: [String],
-                  spells: String) {
+class CharacterModel: Codable {
+    let name: String?
+    let race: String
+    let languages: String
+    let classes: String
+
+    internal init(name: String? = nil, race: String, languages: String, classes: String) {
         self.name = name
         self.race = race
-        self.subraces = subraces
+        self.languages = languages
         self.classes = classes
-        self.subClass = subClass
-        self.skills = skills
-        self.spells = spells
     }
-    let name: String
-    let race: String
-    let subraces: String
-    let classes: String
-    let subClass: String
-    let skills: [String]
-    let spells: String
 }
