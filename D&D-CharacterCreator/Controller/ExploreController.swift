@@ -25,14 +25,17 @@ class ExploreController: UIViewController {
         collectionView?.delegate = self
         view.addSubview(collectionView ?? UICollectionView())
         collectionConstraints()
-        view.backgroundColor = .white
+        view.backgroundColor = .secondarySystemGroupedBackground
+        collectionView?.backgroundColor = .secondarySystemGroupedBackground
         loadRequest()
     }
 
     func loadRequest() {
         Task {
             let request = await API.getData()
-            print("requisição: \(request.results?[0].name)")
+            if let res = request.results {
+                print("requisição: \(res[0].name)")
+            }
         }
     }
 
@@ -67,7 +70,11 @@ extension ExploreController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? CardHomeCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: "MyCell",
+            for: indexPath) as? CardHomeCell else {
+            return UICollectionViewCell()
+        }
         cell.layer.shadowColor = UIColor(.black).cgColor
         cell.layer.shadowRadius = 3
         cell.layer.shadowOpacity = 0.9
