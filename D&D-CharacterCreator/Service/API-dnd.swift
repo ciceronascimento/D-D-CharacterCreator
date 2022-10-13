@@ -9,17 +9,17 @@ import Foundation
 
 class API {
     let route = "races"
-    static func getData() async -> CharacterModel {
-        var urlRequest = URLRequest(url: URL(string: "https://www.dnd5eapi.co/races")!)
+    static func getData() async -> APIModel {
+        var urlRequest = URLRequest(url: URL(string: "https://www.dnd5eapi.co/api/races")!)
         urlRequest.httpMethod = "GET"
 
         do {
             let(data, _) = try await URLSession.shared.data(for: urlRequest)
-            let getDataDecoded = try JSONDecoder().decode(CharacterModel.self, from: data)
+            let getDataDecoded = try JSONDecoder().decode(APIModel.self, from: data)
             return getDataDecoded
         } catch {
             print(error)
         }
-        return CharacterModel(name: "teste", race: "teste", languages: "teste", classes: "teste")
+        return APIModel(count: 1, results: [Result(index: "", name: "", url: "")])
     }
 }

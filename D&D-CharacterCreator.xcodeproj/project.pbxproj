@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD12AFC228F850BA00F044C8 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFC128F850BA00F044C8 /* APIModel.swift */; };
 		DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAA28F4536A0003566F /* AppDelegate.swift */; };
 		DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAC28F4536A0003566F /* SceneDelegate.swift */; };
 		DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAE28F4536A0003566F /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD12AFC128F850BA00F044C8 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		DDA57DA728F4536A0003566F /* D&D-CharacterCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D-CharacterCreator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA57DAA28F4536A0003566F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAC28F4536A0003566F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		DDA57DDD28F45AAB0003566F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD12AFC128F850BA00F044C8 /* APIModel.swift */,
 				DDA57DE028F45AD60003566F /* CharacterModel.swift */,
 			);
 			path = Model;
@@ -356,6 +359,7 @@
 				DDA57DEC28F45D130003566F /* CharacterSheetController.swift in Sources */,
 				DDA57DE528F45B0E0003566F /* API-dnd.swift in Sources */,
 				DDA57DB528F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld in Sources */,
+				DD12AFC228F850BA00F044C8 /* APIModel.swift in Sources */,
 				DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */,
 				DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */,
 				DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */,

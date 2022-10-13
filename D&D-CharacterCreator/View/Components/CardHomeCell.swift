@@ -9,9 +9,20 @@ import UIKit
 import SwiftUI
 
 class CardHomeCell: UICollectionViewCell {
+
     // pesquisar modificadores de acesso para classes, usar protocolo ou função para alterar texto
-    var cardName: String = "Titulo card"
-    var imageName: String = "party"
+    var cardName: String? {
+        didSet {
+            guard let name = cardName else { return }
+            self.label.text = name
+        }
+    }
+    var imageName: String? {
+        didSet {
+            guard let image = imageName else { return }
+            backGround.image = UIImage(named: image)
+        }
+    }
 
     fileprivate let backGround: UIImageView = {
         let imgView = UIImageView()
@@ -20,13 +31,15 @@ class CardHomeCell: UICollectionViewCell {
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 12
         imgView.image = UIImage(named: "party")
-        imgView.backgroundColor = .red
+        imgView.layer.backgroundColor = UIColor.black.cgColor
+        imgView.layer.opacity = 0.8
+        imgView.backgroundColor = .black
         return imgView
     }()
     lazy fileprivate var label: UILabel = {
        let label = UILabel()
         label.text = cardName
-        label.font = .systemFont(ofSize: 24, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -36,7 +49,7 @@ class CardHomeCell: UICollectionViewCell {
         contentView.addSubview(backGround)
         contentView.addSubview(label)
         contentView.layer.cornerRadius = 15
-        contentView.backgroundColor = .red
+        contentView.backgroundColor = .black
         setupConstraints()
     }
     required init?(coder: NSCoder) {
@@ -51,7 +64,7 @@ class CardHomeCell: UICollectionViewCell {
             label.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
             label.heightAnchor.constraint(equalToConstant: 120),
-            label.widthAnchor.constraint(equalToConstant: 120)
+            label.widthAnchor.constraint(equalToConstant: 170)
         ])
     }
 }

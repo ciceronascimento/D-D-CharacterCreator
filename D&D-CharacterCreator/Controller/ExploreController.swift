@@ -32,7 +32,7 @@ class ExploreController: UIViewController {
     func loadRequest() {
         Task {
             let request = await API.getData()
-            print("requisição: \(request)")
+            print("requisição: \(request.results?[0].name)")
         }
     }
 
@@ -67,11 +67,22 @@ extension ExploreController: UICollectionViewDataSource {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) as? CardHomeCell else { return UICollectionViewCell() }
         cell.layer.shadowColor = UIColor(.black).cgColor
         cell.layer.shadowRadius = 3
         cell.layer.shadowOpacity = 0.9
         cell.layer.shadowOffset = CGSize(width: 1, height: 3)
+        switch indexPath.row {
+        case 0:
+            cell.cardName = "Character sheet"
+            cell.imageName = "newChar"
+        case 1:
+            cell.cardName = "My characters"
+            cell.imageName = "party"
+        default:
+            break
+        }
+
         return cell
     }
 
