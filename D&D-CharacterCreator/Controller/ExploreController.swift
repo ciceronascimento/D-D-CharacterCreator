@@ -28,6 +28,13 @@ class ExploreController: UIViewController {
         view.backgroundColor = .white
     }
 
+    func loadRequest() {
+        Task {
+            let request = await API.getData()
+            print("requisição: \(request)")
+        }
+    }
+
     func configNavBar() {
         // adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
@@ -60,6 +67,10 @@ extension ExploreController: UICollectionViewDataSource {
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath)
+        cell.layer.shadowColor = UIColor(.black).cgColor
+        cell.layer.shadowRadius = 3
+        cell.layer.shadowOpacity = 0.9
+        cell.layer.shadowOffset = CGSize(width: 1, height: 3)
         return cell
     }
 
@@ -68,7 +79,6 @@ extension ExploreController: UICollectionViewDataSource {
 extension ExploreController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Card: \(indexPath.row + 1)")
         switch indexPath.row {
         case 0:
             navigationController?.pushViewController(CharacterSheetController(), animated: true)

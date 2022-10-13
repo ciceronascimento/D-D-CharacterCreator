@@ -19,7 +19,6 @@ class CardHomeCell: UICollectionViewCell {
         imgView.contentMode = .scaleAspectFill
         imgView.clipsToBounds = true
         imgView.layer.cornerRadius = 12
-        
         imgView.image = UIImage(named: "party")
         imgView.backgroundColor = .red
         return imgView
@@ -29,7 +28,6 @@ class CardHomeCell: UICollectionViewCell {
         label.text = cardName
         label.font = .systemFont(ofSize: 24, weight: .bold)
         label.textColor = .white
-//        label.font = .preferredFont(forTextStyle: .title2)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -39,8 +37,6 @@ class CardHomeCell: UICollectionViewCell {
         contentView.addSubview(label)
         contentView.layer.cornerRadius = 15
         contentView.backgroundColor = .red
-        contentView.layer.shadowColor = UIColor(.black).cgColor
-        contentView.layer.shadowRadius = 10
         setupConstraints()
     }
     required init?(coder: NSCoder) {
