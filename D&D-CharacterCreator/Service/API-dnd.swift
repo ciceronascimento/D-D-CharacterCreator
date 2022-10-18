@@ -8,9 +8,9 @@
 import Foundation
 
 class API {
-    let route = "races"
-    static func getData() async -> APIModel {
-        var urlRequest = URLRequest(url: URL(string: "https://www.dnd5eapi.co/api/races")!)
+    static func getData(route: String) async -> APIModel {
+        let url = self.returnURLRequest(route: route)
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
 
         do {
@@ -21,5 +21,23 @@ class API {
             print(error)
         }
         return APIModel(count: 1, results: [Result(index: "", name: "", url: "")])
+    }
+
+    static func returnURLRequest(route: String) -> URL {
+        switch route {
+        case APIRoute.races.rawValue:
+            let baseURL = "https://www.dnd5eapi.co/api/"
+            let url = URL(string: baseURL + route)!
+            return url
+        case APIRoute.classes.rawValue:
+            let baseURL = "https://www.dnd5eapi.co/api/"
+            let url = URL(string: baseURL + route)!
+            return url
+        default:
+            let baseURL = "https://www.dnd5eapi.co/api/"
+            let url = URL(string: baseURL + APIRoute.races.rawValue)!
+            return url
+        }
+
     }
 }

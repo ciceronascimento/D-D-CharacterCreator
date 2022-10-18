@@ -27,24 +27,26 @@ class ExploreController: UIViewController {
         collectionConstraints()
         view.backgroundColor = .secondarySystemGroupedBackground
         collectionView?.backgroundColor = .secondarySystemGroupedBackground
-        loadRequest()
+//        loadRequest()
     }
 
-    func loadRequest() {
-        Task {
-            let request = await API.getData()
-            if let res = request.results {
-                print("requisição: \(res[0].name)")
-            }
-        }
-    }
+//    func loadRequest() {
+//        Task {
+//            let request = await API.getData()
+//            if let res = request.results {
+//                print("requisição: \(res[0].name)")
+//            }
+//        }
+//    }
 
     func configNavBar() {
-        // adicionar no cbl, como modificar large titles
+        // MARK: Configura a aparencia da navbar, cor do titulo, texto da nav title e botão voltar
+        // Adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
         let backButton = UIBarButtonItem()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
+        self.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "D&D characters"
         backButton.title = "Voltar"
@@ -75,10 +77,12 @@ extension ExploreController: UICollectionViewDataSource {
             for: indexPath) as? CardHomeCell else {
             return UICollectionViewCell()
         }
+        // MARK: Configuração para sombras e opacidades
         cell.layer.shadowColor = UIColor(.black).cgColor
         cell.layer.shadowRadius = 3
         cell.layer.shadowOpacity = 0.9
         cell.layer.shadowOffset = CGSize(width: 1, height: 3)
+        // Verifica o index do card e passa como parametros o titulo e o nome da imagem correspondente
         switch indexPath.row {
         case 0:
             cell.cardName = "Character sheet"
@@ -98,6 +102,7 @@ extension ExploreController: UICollectionViewDataSource {
 extension ExploreController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Verifica o index do card e faz a navegação correspondente ao título
         switch indexPath.row {
         case 0:
             navigationController?.pushViewController(CharacterSheetController(), animated: true)
@@ -106,6 +111,5 @@ extension ExploreController: UICollectionViewDelegate {
         default:
             break
         }
-
     }
 }

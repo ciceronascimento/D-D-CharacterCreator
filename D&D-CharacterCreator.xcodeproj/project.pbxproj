@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		DD12AFC228F850BA00F044C8 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFC128F850BA00F044C8 /* APIModel.swift */; };
+		DD12AFC428FD745700F044C8 /* FormCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFC328FD745700F044C8 /* FormCell.swift */; };
+		DD12AFCA28FED80200F044C8 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFC928FED80200F044C8 /* OptionsView.swift */; };
+		DD12AFCC28FEE5B100F044C8 /* OptionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFCB28FEE5B100F044C8 /* OptionsController.swift */; };
+		DD12AFCE28FF161F00F044C8 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFCD28FF161F00F044C8 /* Routes.swift */; };
 		DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAA28F4536A0003566F /* AppDelegate.swift */; };
 		DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAC28F4536A0003566F /* SceneDelegate.swift */; };
 		DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAE28F4536A0003566F /* ViewController.swift */; };
@@ -49,6 +53,10 @@
 
 /* Begin PBXFileReference section */
 		DD12AFC128F850BA00F044C8 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
+		DD12AFC328FD745700F044C8 /* FormCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormCell.swift; sourceTree = "<group>"; };
+		DD12AFC928FED80200F044C8 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		DD12AFCB28FEE5B100F044C8 /* OptionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsController.swift; sourceTree = "<group>"; };
+		DD12AFCD28FF161F00F044C8 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		DDA57DA728F4536A0003566F /* D&D-CharacterCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D-CharacterCreator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA57DAA28F4536A0003566F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAC28F4536A0003566F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +166,7 @@
 		DDA57DDD28F45AAB0003566F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DD12AFCD28FF161F00F044C8 /* Routes.swift */,
 				DD12AFC128F850BA00F044C8 /* APIModel.swift */,
 				DDA57DE028F45AD60003566F /* CharacterModel.swift */,
 			);
@@ -179,6 +188,7 @@
 				DDA57DEB28F45D130003566F /* CharacterSheetController.swift */,
 				DDA57DEF28F4A9CF0003566F /* ExploreController.swift */,
 				DDA57DF928F5B45B0003566F /* AllCharactersController.swift */,
+				DD12AFCB28FEE5B100F044C8 /* OptionsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,6 +200,7 @@
 				DDA57DE928F45C140003566F /* CharacterSheetView.swift */,
 				DDA57DF128F4A9EA0003566F /* ExploreView.swift */,
 				DDA57DFB28F5B4730003566F /* AllCharactersView.swift */,
+				DD12AFC928FED80200F044C8 /* OptionsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,6 +208,7 @@
 		DDA57DF328F4AB730003566F /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DD12AFC328FD745700F044C8 /* FormCell.swift */,
 				DDA57DF428F4ABC10003566F /* CardHomeCell.swift */,
 				DDA57DFD28F5D0F10003566F /* CharacterCardCellCell.swift */,
 			);
@@ -361,14 +373,18 @@
 				DDA57DB528F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld in Sources */,
 				DD12AFC228F850BA00F044C8 /* APIModel.swift in Sources */,
 				DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */,
+				DD12AFC428FD745700F044C8 /* FormCell.swift in Sources */,
+				DD12AFCC28FEE5B100F044C8 /* OptionsController.swift in Sources */,
 				DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */,
 				DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */,
 				DDA57DE328F45AF60003566F /* API-notion.swift in Sources */,
 				DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */,
+				DD12AFCA28FED80200F044C8 /* OptionsView.swift in Sources */,
 				DDA57DF028F4A9CF0003566F /* ExploreController.swift in Sources */,
 				DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */,
 				DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */,
 				DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */,
+				DD12AFCE28FF161F00F044C8 /* Routes.swift in Sources */,
 				DDA57DFE28F5D0F10003566F /* CharacterCardCellCell.swift in Sources */,
 				DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */,
 			);

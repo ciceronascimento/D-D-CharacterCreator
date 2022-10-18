@@ -13,7 +13,7 @@ struct APIModel: Codable {
 }
 
 struct Result: Codable {
-    let index: String
+    let index: String?
     let name: String
     let url: String
 }
