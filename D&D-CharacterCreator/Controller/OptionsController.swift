@@ -11,6 +11,7 @@ class OptionsController: UIViewController {
 
     var route: String
     var screen: OptionsView = OptionsView()
+    weak var delegate: OptionsDelegate?
 
     internal init(route: String, screen: OptionsView = OptionsView()) {
         self.route = route
@@ -68,11 +69,13 @@ extension OptionsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let option = screen.options[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
+
+        delegate?.sendInfo(text: option.name)
         print(option.name)
+        navigationController?.popViewController(animated: true)
     }
 }
 
-//            let request = await API.getData()
-//            if let res = request.results {
-//                print("requisição: \(res[0].name)")
-//            }
+protocol OptionsDelegate: AnyObject {
+    func sendInfo(text: String)
+}

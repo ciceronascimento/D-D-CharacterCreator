@@ -9,13 +9,19 @@ import UIKit
 
 class CharacterSheetController: UIViewController, UITextFieldDelegate {
 
+    let classController = OptionsController(route: "classes")
+    let raceController = OptionsController(route: "race")
+
     let placeholderData = ["Nome", "Classe", "Raça"]
-    var secondaryText: [String] = [""]
+    var secondaryText: [String] = ["", ""]
+
+    var secondaryTextClass: String = ""
+    var secondaryTextRace: String = ""
 
     let labelIncoming: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Mais itens em atualizaçoes futuras.."
+        label.text = "Mais itens chegando..."
         label.textColor = .gray
         return label
     }()
@@ -80,16 +86,20 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
             textField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
 
+            tableView.heightAnchor.constraint(equalToConstant: 160),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+//            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 5),
 
+            labelIncoming.heightAnchor.constraint(equalToConstant: 15),
             labelIncoming.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            labelIncoming.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            labelIncoming.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 1)
+//            labelIncoming.centerYAnchor.constraint(equalTo: view.centerYAnchor)
 
         ])
     }
+
 }
 extension CharacterSheetController: UITableViewDataSource {
 
@@ -104,12 +114,14 @@ extension CharacterSheetController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             configuration.text = placeholderData[1]
-            configuration.secondaryText = secondaryText[0]
+//            configuration.secondaryText = secondaryText[0]
+            configuration.secondaryText = secondaryTextClass
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         case 1:
             configuration.text = placeholderData[2]
-            configuration.secondaryText = secondaryText[0]
+//            configuration.secondaryText = secondaryText[1]
+            configuration.secondaryText = secondaryTextRace
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         default:
@@ -117,15 +129,19 @@ extension CharacterSheetController: UITableViewDataSource {
         }
         return cell
     }
+
 }
 
 extension CharacterSheetController: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            navigationController?.pushViewController(OptionsController(route: "classes"), animated: true)
+            navigationController?.pushViewController(classController, animated: true)
+            classController.delegate = self
         case 1:
-            navigationController?.pushViewController(OptionsController(route: "race"), animated: true)
+            navigationController?.pushViewController(raceController, animated: true)
+            classController.delegate = self
         default:
             break
         }
@@ -150,6 +166,18 @@ extension UITextField {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.rightView = paddingView
         self.rightViewMode = .always
+    }
+}
+
+extension CharacterSheetController: OptionsDelegate {
+    func sendInfo(text: String) {
+//        secondaryText[0] = text
+        secondaryTextRace = text
+        secondaryTextClass = text
+
+
+        tableView.reloadData()
+        print("array: \(secondaryText)")
     }
 }
 
