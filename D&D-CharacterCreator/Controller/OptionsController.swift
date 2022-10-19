@@ -44,12 +44,12 @@ class OptionsController: UIViewController {
         }
     }
     func configNavBar() {
-        // adicionar no cbl, como modificar large titles
+        let backButton = UIBarButtonItem()
+        backButton.title = "Voltar"
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         let appearance = UINavigationBarAppearance()
-        //        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
-//        navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.title = "Selecione o tipo"
     }
 

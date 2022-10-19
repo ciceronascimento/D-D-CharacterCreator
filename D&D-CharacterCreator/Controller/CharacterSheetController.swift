@@ -8,7 +8,17 @@
 import UIKit
 
 class CharacterSheetController: UIViewController, UITextFieldDelegate {
+
     let placeholderData = ["Nome", "Classe", "Raça"]
+    var secondaryText: [String] = [""]
+
+    let labelIncoming: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Mais itens em atualizaçoes futuras.."
+        label.textColor = .gray
+        return label
+    }()
 
     let textField: UITextField = {
         let textField = UITextField()
@@ -36,12 +46,14 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         tableView.delegate = self
         view.addSubview(textField)
         view.addSubview(tableView)
+        view.addSubview(labelIncoming)
         tableView.isUserInteractionEnabled = true
         configNavBar()
         configConstraints()
         view.backgroundColor = .systemGroupedBackground
         tableView.backgroundColor = .systemGroupedBackground
     }
+
     func configNavBar() {
         // adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
@@ -55,41 +67,51 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
 //        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Character Sheet"
     }
+
      @objc func sayHello() {
-         print("UHUU")
+         print("Implementar salvar")
     }
+
     func configConstraints() {
+
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 50),
             textField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             textField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            textField.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
 
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-//            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-            tableView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 5)
+            tableView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 5),
+
+            labelIncoming.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            labelIncoming.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+
         ])
     }
 }
 extension CharacterSheetController: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "form_cell", for: indexPath) as? FormCell else {
-            return UITableViewCell()
-        }
-        switch indexPath.row {
 
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
+        var configuration = cell.defaultContentConfiguration()
+
+        switch indexPath.row {
         case 0:
-//            cell.selectionStyle = .none
-            cell.placeholder = placeholderData[1]
+            configuration.text = placeholderData[1]
+            configuration.secondaryText = secondaryText[0]
+            cell.contentConfiguration = configuration
+            cell.accessoryType = .disclosureIndicator
         case 1:
-//            cell.selectionStyle = .none
-            cell.placeholder = placeholderData[2]
+            configuration.text = placeholderData[2]
+            configuration.secondaryText = secondaryText[0]
+            cell.contentConfiguration = configuration
+            cell.accessoryType = .disclosureIndicator
         default:
             break
         }
@@ -107,6 +129,7 @@ extension CharacterSheetController: UITableViewDelegate {
         default:
             break
         }
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 //        if let cell = tableView.dequeueReusableCell(withIdentifier: "form_cell", for: indexPath) as? FormCell {
@@ -118,14 +141,34 @@ extension CharacterSheetController: UITableViewDelegate {
 //        }
 //        return UITableViewCell()
 extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat) {
+    func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView
         self.leftViewMode = .always
     }
-    func setRightPaddingPoints(_ amount:CGFloat) {
+    func setRightPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.rightView = paddingView
         self.rightViewMode = .always
     }
 }
+
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier:
+// "form_cell", for: indexPath) as? FormCell else {
+//            return UITableViewCell()
+//        }
+//
+//        var configuration = cell.defaultContentConfiguration()
+//
+//        switch indexPath.row {
+//
+//        case 0:
+
+//            configuration.text = placeholderData[1]
+//            cell.placeholder = placeholderData[1]
+//        case 1:
+
+//            cell.placeholder = placeholderData[2]
+//        default:
+//            break
+//        }

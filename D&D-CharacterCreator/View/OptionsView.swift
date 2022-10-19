@@ -40,11 +40,3 @@ class OptionsView: UIView {
         ])
     }
 }
-
-//
-// Task {
-//    let request = await API.getData()
-//    if let res = request.results {
-//        print("requisição: \(res[0].name)")
-//    }
-// }
