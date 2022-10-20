@@ -5,15 +5,18 @@
 //  Created by Cicero Nascimento on 10/10/22.
 //
 
+// swiftlint:disable force_cast
+
 import UIKit
 
 class CharacterSheetController: UIViewController, UITextFieldDelegate {
 
     let classController = OptionsController(route: "classes")
     let raceController = OptionsController(route: "race")
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let coreDataMethods = CoreDataMethods()
 
     let placeholderData = ["Nome", "Classe", "Raça"]
-    var secondaryText: [String] = ["", ""]
 
     var secondaryTextClass: String = ""
     var secondaryTextRace: String = ""
@@ -69,12 +72,24 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Criar",
                                                                  style: .plain,
                                                                  target: ExploreView(),
-                                                                 action: #selector(sayHello))
+                                                                 action: #selector(saveCoreData))
 //        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Character Sheet"
     }
 
-     @objc func sayHello() {
+     @objc func saveCoreData() {
+
+        let nameCharacter = textField.text!
+
+         print("Nome do personagem: \(nameCharacter)")
+         print("Classe: \(secondaryTextClass)")
+         print("Raça: \(secondaryTextRace)")
+         _ = coreDataMethods.createCharacter(name: nameCharacter,
+                                             race: secondaryTextRace,
+                                             classes: secondaryTextClass,
+                                             context: context)
+         _ = coreDataMethods.saveCharacterCoreData(context: context)
+         _ = coreDataMethods.fetchCharacters(context: context)
          print("Implementar salvar")
     }
 
@@ -114,14 +129,12 @@ extension CharacterSheetController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             configuration.text = placeholderData[1]
-            configuration.secondaryText = secondaryText[0]
-//            configuration.secondaryText = secondaryTextClass
+            configuration.secondaryText = secondaryTextClass
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         case 1:
             configuration.text = placeholderData[2]
-            configuration.secondaryText = secondaryText[1]
-//            configuration.secondaryText = secondaryTextRace
+            configuration.secondaryText = secondaryTextRace
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         default:
@@ -172,18 +185,20 @@ extension UITextField {
 extension CharacterSheetController: OptionsDelegate {
     func sendInfo(text: String, routeChoose: String) {
         if(routeChoose == "classes") {
-            secondaryText[0] = text
+            secondaryTextClass = text
+            print("Escolhido: \(secondaryTextClass)")
         } else {
-            secondaryText[1] = text
+            secondaryTextRace = text
+            print("Escolhido: \(secondaryTextRace)")
         }
         tableView.reloadData()
-        print("Escolhido: \(secondaryText)")
+
     }
 }
 
 //        guard let cell = tableView.dequeueReusableCell(withIdentifier:
 // "form_cell", for: indexPath) as? FormCell else {
-//            return UITableViewCell()
+//            return UITableViewCell()\\\\\\\\\\\\]\]\\\\
 //        }
 //
 //        var configuration = cell.defaultContentConfiguration()
