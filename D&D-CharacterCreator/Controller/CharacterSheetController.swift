@@ -114,14 +114,14 @@ extension CharacterSheetController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             configuration.text = placeholderData[1]
-//            configuration.secondaryText = secondaryText[0]
-            configuration.secondaryText = secondaryTextClass
+            configuration.secondaryText = secondaryText[0]
+//            configuration.secondaryText = secondaryTextClass
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         case 1:
             configuration.text = placeholderData[2]
-//            configuration.secondaryText = secondaryText[1]
-            configuration.secondaryText = secondaryTextRace
+            configuration.secondaryText = secondaryText[1]
+//            configuration.secondaryText = secondaryTextRace
             cell.contentConfiguration = configuration
             cell.accessoryType = .disclosureIndicator
         default:
@@ -141,7 +141,7 @@ extension CharacterSheetController: UITableViewDelegate {
             classController.delegate = self
         case 1:
             navigationController?.pushViewController(raceController, animated: true)
-            classController.delegate = self
+            raceController.delegate = self
         default:
             break
         }
@@ -170,14 +170,14 @@ extension UITextField {
 }
 
 extension CharacterSheetController: OptionsDelegate {
-    func sendInfo(text: String) {
-//        secondaryText[0] = text
-        secondaryTextRace = text
-        secondaryTextClass = text
-
-
+    func sendInfo(text: String, routeChoose: String) {
+        if(routeChoose == "classes") {
+            secondaryText[0] = text
+        } else {
+            secondaryText[1] = text
+        }
         tableView.reloadData()
-        print("array: \(secondaryText)")
+        print("Escolhido: \(secondaryText)")
     }
 }
 

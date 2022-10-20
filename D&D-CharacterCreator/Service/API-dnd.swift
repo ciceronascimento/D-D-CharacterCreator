@@ -38,6 +38,5 @@ class API {
             let url = URL(string: baseURL + APIRoute.races.rawValue)!
             return url
         }
-
     }
 }

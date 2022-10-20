@@ -70,12 +70,12 @@ extension OptionsController: UITableViewDelegate, UITableViewDataSource {
         let option = screen.options[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
 
-        delegate?.sendInfo(text: option.name)
+        delegate?.sendInfo(text: option.name, routeChoose: route)
         print(option.name)
         navigationController?.popViewController(animated: true)
     }
 }
 
 protocol OptionsDelegate: AnyObject {
-    func sendInfo(text: String)
+    func sendInfo(text: String, routeChoose: String)
 }
