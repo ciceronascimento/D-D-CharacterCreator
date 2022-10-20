@@ -19,20 +19,20 @@ class CharacterCell: UICollectionViewCell {
         didSet {
             guard let className = className else { return }
             backGround.image = UIImage(named: className)
-            self.labelClass.text = className
+            self.labelClass.text = "Classe: \(className)"
         }
     }
     var raceName: String? {
         didSet {
             guard let raceName = raceName else {return}
-            self.labelRace.text = raceName
+            self.labelRace.text = "Raça: \(raceName)"
         }
     }
 
     lazy fileprivate var labelName: UILabel = {
        let label = UILabel()
         label.text = characterName
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 28, weight: .bold)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -87,19 +87,20 @@ class CharacterCell: UICollectionViewCell {
     func setupConstraints() {
         NSLayoutConstraint.activate([
 
-            labelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            labelName.topAnchor.constraint(equalTo: contentView.topAnchor),
-            labelName.heightAnchor.constraint(equalToConstant: 120),
-            labelName.widthAnchor.constraint(equalToConstant: 170),
+//            labelName.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            labelName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            labelName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+//            labelName.heightAnchor.constraint(equalToConstant: 120),
+//            labelName.widthAnchor.constraint(equalToConstant: 170),
 
-            labelClass.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            labelClass.topAnchor.constraint(equalTo: labelName.bottomAnchor),
-            labelClass.heightAnchor.constraint(equalToConstant: 120),
+            labelClass.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            labelClass.topAnchor.constraint(equalTo: labelName.bottomAnchor, constant: 50),
+//            labelClass.heightAnchor.constraint(equalToConstant: 120),
             labelClass.widthAnchor.constraint(equalToConstant: 170),
 
-            labelRace.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            labelRace.topAnchor.constraint(equalTo: labelClass.bottomAnchor),
-            labelRace.heightAnchor.constraint(equalToConstant: 120),
+            labelRace.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            labelRace.topAnchor.constraint(equalTo: labelClass.bottomAnchor, constant: 10),
+//            labelRace.heightAnchor.constraint(equalToConstant: 120),
             labelRace.widthAnchor.constraint(equalToConstant: 170),
 
             backGround.topAnchor.constraint(equalTo: contentView.topAnchor),

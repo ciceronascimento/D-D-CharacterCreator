@@ -16,9 +16,9 @@ extension Character {
     }
 
     @NSManaged public var id: UUID?
-    @NSManaged public var name: String?
-    @NSManaged public var classes: String?
-    @NSManaged public var race: String?
+    @NSManaged public var name: String
+    @NSManaged public var classes: String
+    @NSManaged public var race: String
 
 }
 

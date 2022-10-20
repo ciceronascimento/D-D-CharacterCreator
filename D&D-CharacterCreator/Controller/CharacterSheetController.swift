@@ -90,7 +90,8 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
                                              context: context)
          _ = coreDataMethods.saveCharacterCoreData(context: context)
          _ = coreDataMethods.fetchCharacters(context: context)
-         print("Implementar salvar")
+         navigationController?.popViewController(animated: true)
+
     }
 
     func configConstraints() {
