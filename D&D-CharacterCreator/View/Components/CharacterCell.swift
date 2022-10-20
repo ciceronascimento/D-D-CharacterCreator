@@ -106,8 +106,7 @@ class CharacterCell: UICollectionViewCell {
             backGround.topAnchor.constraint(equalTo: contentView.topAnchor),
             backGround.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             backGround.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            backGround.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-
+            backGround.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
     }
 }

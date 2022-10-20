@@ -57,13 +57,6 @@ class AllCharactersController: UIViewController {
 
     func configConstraints() {
         collectionView?.backgroundColor = .white
-//        NSLayoutConstraint.activate([
-//
-//            collectionView?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
-//            collectionView?.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-//            collectionView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-//            collectionView?.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-//        ])
         collectionView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         collectionView?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         collectionView?.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
@@ -90,15 +83,9 @@ extension AllCharactersController: UICollectionViewDataSource {
         cell.layer.shadowRadius = 3
         cell.layer.shadowOpacity = 0.9
         cell.layer.shadowOffset = CGSize(width: 1, height: 3)
-
-
-
-
         cell.raceName = sheets[indexPath.row].race
         cell.characterName = sheets[indexPath.row].name
         cell.className = sheets[indexPath.row].classes
         return cell
-
-
     }
 }

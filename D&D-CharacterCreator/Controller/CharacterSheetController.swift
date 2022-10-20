@@ -13,10 +13,9 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
 
     let classController = OptionsController(route: "classes")
     let raceController = OptionsController(route: "race")
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let coreDataMethods = CoreDataMethods()
-
     let placeholderData = ["Nome", "Classe", "Raça"]
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var secondaryTextClass: String = ""
     var secondaryTextRace: String = ""
@@ -24,7 +23,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
     let labelIncoming: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Mais itens chegando..."
+        label.text = "Novidades em breve..."
         label.textColor = .gray
         return label
     }()
@@ -42,15 +41,12 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
     let tableView: UITableView = {
         let table = UITableView.init(frame: CGRect.zero, style: .insetGrouped)
         table.translatesAutoresizingMaskIntoConstraints = false
-        //        table.backgroundColor = .systemGray
         return table
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
-        //        tableView.backgroundColor = .systemGray5
-        //        tableView.separatorStyle = .none
         tableView.register(FormCell.self, forCellReuseIdentifier: "form_cell")
         tableView.delegate = self
         view.addSubview(textField)
@@ -63,62 +59,84 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         tableView.backgroundColor = .systemGroupedBackground
     }
 
+    func displayAlert (event: String) {
+        switch event {
+        case "error":
+            let dialogMessageError = UIAlertController(title: "Campos vazios",
+                                                       message: "Certifique-se que todos os campos estão preenchidos.",
+                                                       preferredStyle: .alert)
+            let confirmationAlert = UIAlertAction(title: "OK",
+                                                  style: .default,
+                                                  handler: { (_) -> Void in
+            })
+            dialogMessageError.addAction(confirmationAlert)
+            self.present(dialogMessageError, animated: true, completion: nil)
+        case "success":
+            let dialogMessageSucess = UIAlertController(title: "Sucesso!",
+                                                        message: "A ficha foi criada com sucesso!",
+                                                        preferredStyle: .alert)
+            let confirmationAlert = UIAlertAction(title: "OK",
+                                                  style: .default,
+                                                  handler: { (_) -> Void in self.popView()
+            })
+            dialogMessageSucess.addAction(confirmationAlert)
+            self.present(dialogMessageSucess, animated: true, completion: nil)
+        default:
+            break
+        }
+    }
+
+    func popView() {
+        navigationController?.popViewController(animated: true)
+    }
+
     func configNavBar() {
-        // adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
-        //        appearance.titleTextAttributes = [.foregroundColor: UIColor.label]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Criar",
                                                                  style: .plain,
                                                                  target: ExploreView(),
                                                                  action: #selector(saveCoreData))
-//        navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Character Sheet"
     }
 
-     @objc func saveCoreData() {
-
+    @objc func saveCoreData() {
         let nameCharacter = textField.text!
-
-         print("Nome do personagem: \(nameCharacter)")
-         print("Classe: \(secondaryTextClass)")
-         print("Raça: \(secondaryTextRace)")
-         _ = coreDataMethods.createCharacter(name: nameCharacter,
-                                             race: secondaryTextRace,
-                                             classes: secondaryTextClass,
-                                             context: context)
-         _ = coreDataMethods.saveCharacterCoreData(context: context)
-         _ = coreDataMethods.fetchCharacters(context: context)
-         navigationController?.popViewController(animated: true)
-
+        if nameCharacter == "" || secondaryTextRace == "" || secondaryTextClass == "" {
+            displayAlert(event: "error")
+        } else {
+            print("Nome do personagem: \(nameCharacter)")
+            print("Classe: \(secondaryTextClass)")
+            print("Raça: \(secondaryTextRace)")
+            _ = coreDataMethods.createCharacter(name: nameCharacter,
+                                                race: secondaryTextRace,
+                                                classes: secondaryTextClass,
+                                                context: context)
+            _ = coreDataMethods.saveCharacterCoreData(context: context)
+            _ = coreDataMethods.fetchCharacters(context: context)
+            displayAlert(event: "success")
+        }
     }
 
     func configConstraints() {
-
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 50),
             textField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
             textField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
             textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 40),
-
             tableView.heightAnchor.constraint(equalToConstant: 160),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-//            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             tableView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 5),
-
             labelIncoming.heightAnchor.constraint(equalToConstant: 15),
             labelIncoming.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             labelIncoming.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 1)
-//            labelIncoming.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-
         ])
     }
-
 }
-extension CharacterSheetController: UITableViewDataSource {
 
+extension CharacterSheetController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
@@ -147,7 +165,6 @@ extension CharacterSheetController: UITableViewDataSource {
 }
 
 extension CharacterSheetController: UITableViewDelegate {
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -162,14 +179,21 @@ extension CharacterSheetController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
-//        if let cell = tableView.dequeueReusableCell(withIdentifier: "form_cell", for: indexPath) as? FormCell {
-//            cell.selectionStyle = .none
-//            cell.placeholder = placeholderData[indexPath.row]
-//            cell.dataTextField.tag = indexPath.row
-//            cell.dataTextField.delegate = self
-//            return cell
-//        }
-//        return UITableViewCell()
+
+extension CharacterSheetController: OptionsDelegate {
+    func sendInfo(text: String, routeChoose: String) {
+        if routeChoose == "classes" {
+            secondaryTextClass = text
+            print("Escolhido: \(secondaryTextClass)")
+        } else {
+            secondaryTextRace = text
+            print("Escolhido: \(secondaryTextRace)")
+        }
+        tableView.reloadData()
+
+    }
+}
+
 extension UITextField {
     func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
@@ -182,37 +206,3 @@ extension UITextField {
         self.rightViewMode = .always
     }
 }
-
-extension CharacterSheetController: OptionsDelegate {
-    func sendInfo(text: String, routeChoose: String) {
-        if(routeChoose == "classes") {
-            secondaryTextClass = text
-            print("Escolhido: \(secondaryTextClass)")
-        } else {
-            secondaryTextRace = text
-            print("Escolhido: \(secondaryTextRace)")
-        }
-        tableView.reloadData()
-
-    }
-}
-
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier:
-// "form_cell", for: indexPath) as? FormCell else {
-//            return UITableViewCell()\\\\\\\\\\\\]\]\\\\
-//        }
-//
-//        var configuration = cell.defaultContentConfiguration()
-//
-//        switch indexPath.row {
-//
-//        case 0:
-
-//            configuration.text = placeholderData[1]
-//            cell.placeholder = placeholderData[1]
-//        case 1:
-
-//            cell.placeholder = placeholderData[2]
-//        default:
-//            break
-//        }

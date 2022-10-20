@@ -3,7 +3,7 @@
 //  D&D-CharacterCreator
 //
 //  Created by Cicero Nascimento on 10/10/22.
-//
+//  swiftlint:disable
 
 import UIKit
 import CoreData
