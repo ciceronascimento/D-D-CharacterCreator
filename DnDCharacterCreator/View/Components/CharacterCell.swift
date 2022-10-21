@@ -19,13 +19,13 @@ class CharacterCell: UICollectionViewCell {
         didSet {
             guard let className = className else { return }
             backGround.image = UIImage(named: className)
-            self.labelClass.text = "Classe: \(className)"
+            self.labelClass.text = "Class: \(className)"
         }
     }
     var raceName: String? {
         didSet {
             guard let raceName = raceName else {return}
-            self.labelRace.text = "Raça: \(raceName)"
+            self.labelRace.text = "Race: \(raceName)"
         }
     }
 

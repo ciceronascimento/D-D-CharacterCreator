@@ -36,4 +36,10 @@ final class CharacterSheetControllerTests: XCTestCase {
 
         XCTAssertEqual(capuredNumberOfRows, expectedNumberORows)
     }
+
+    func test_saveCoreData_shouldSaveCoreData() {
+        sut.saveCoreData()
+
+        
+    }
 }

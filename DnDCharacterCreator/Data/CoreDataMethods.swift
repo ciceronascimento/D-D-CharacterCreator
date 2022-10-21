@@ -32,24 +32,11 @@ class CoreDataMethods {
 
         do {
             try context.save()
-            print("Character salvo adicionado com sucesso")
             return true
         } catch {
-            print("Error: was not able to add the clothe at core data")
             print(error)
         }
         return false
     }
 
-    func printAllCharacters(context: NSManagedObjectContext) {
-        let characters = fetchCharacters(context: context)
-        if !characters.isEmpty {
-            for character in characters {
-                print("name: \(String(describing: character.name)), class: \(String(describing: character.classes)), race: \(String(describing: character.race))")
-            }
-        } else {
-            print("Não há personagens salvos no core data.")
-        }
-    }
-//    func createCharacter(data:)
 }

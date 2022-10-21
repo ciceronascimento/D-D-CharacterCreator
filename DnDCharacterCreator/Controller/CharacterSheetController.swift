@@ -14,7 +14,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
     let classController = OptionsController(route: "classes")
     let raceController = OptionsController(route: "race")
     let coreDataMethods = CoreDataMethods()
-    let placeholderData = ["Nome", "Classe", "Raça"]
+    let placeholderData = ["Name", "Class", "Race"]
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var secondaryTextClass: String = ""
@@ -23,7 +23,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
     let labelIncoming: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Novidades em breve..."
+        label.text = "New changes incoming..."
         label.textColor = .gray
         return label
     }()
@@ -33,8 +33,9 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .white
         textField.layer.cornerRadius = 10
-        textField.placeholder = "Nome"
+        textField.placeholder = "Name"
         textField.setLeftPaddingPoints(18)
+        textField.backgroundColor = .secondarySystemGroupedBackground
         return textField
     }()
 
@@ -72,8 +73,8 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
     func displayAlert (event: String) {
         switch event {
         case "error":
-            let dialogMessageError = UIAlertController(title: "Campos vazios",
-                                                       message: "Certifique-se que todos os campos estão preenchidos.",
+            let dialogMessageError = UIAlertController(title: "Empty fields",
+                                                       message: "All fields are required",
                                                        preferredStyle: .alert)
             let confirmationAlert = UIAlertAction(title: "OK",
                                                   style: .default,
@@ -82,8 +83,8 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
             dialogMessageError.addAction(confirmationAlert)
             self.present(dialogMessageError, animated: true, completion: nil)
         case "success":
-            let dialogMessageSucess = UIAlertController(title: "Sucesso!",
-                                                        message: "A ficha foi criada com sucesso!",
+            let dialogMessageSucess = UIAlertController(title: "Success!",
+                                                        message: "Your sheet is registered!",
                                                         preferredStyle: .alert)
             let confirmationAlert = UIAlertAction(title: "OK",
                                                   style: .default,
@@ -104,7 +105,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         let appearance = UINavigationBarAppearance()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Criar",
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Create",
                                                                  style: .plain,
                                                                  target: ExploreView(),
                                                                  action: #selector(saveCoreData))
@@ -116,9 +117,6 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         if nameCharacter == "" || secondaryTextRace == "" || secondaryTextClass == "" {
             displayAlert(event: "error")
         } else {
-            print("Nome do personagem: \(nameCharacter)")
-            print("Classe: \(secondaryTextClass)")
-            print("Raça: \(secondaryTextRace)")
             _ = coreDataMethods.createCharacter(name: nameCharacter,
                                                 race: secondaryTextRace,
                                                 classes: secondaryTextClass,
@@ -194,10 +192,8 @@ extension CharacterSheetController: OptionsDelegate {
     func sendInfo(text: String, routeChoose: String) {
         if routeChoose == "classes" {
             secondaryTextClass = text
-            print("Escolhido: \(secondaryTextClass)")
         } else {
             secondaryTextRace = text
-            print("Escolhido: \(secondaryTextRace)")
         }
         tableView.reloadData()
 

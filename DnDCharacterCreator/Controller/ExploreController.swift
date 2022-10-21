@@ -19,7 +19,6 @@ class ExploreController: UIViewController {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 40
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        // adicionar no cbl o que significa reuse identifier
         collectionView?.register(CardHomeCell.self, forCellWithReuseIdentifier: "MyCell")
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -27,21 +26,10 @@ class ExploreController: UIViewController {
         collectionConstraints()
         view.backgroundColor = .secondarySystemGroupedBackground
         collectionView?.backgroundColor = .secondarySystemGroupedBackground
-//        loadRequest()
     }
-
-//    func loadRequest() {
-//        Task {
-//            let request = await API.getData()
-//            if let res = request.results {
-//                print("requisição: \(res[0].name)")
-//            }
-//        }
-//    }
 
     func configNavBar() {
         // MARK: Configura a aparencia da navbar, cor do titulo, texto da nav title e botão voltar
-        // Adicionar no cbl, como modificar large titles
         let appearance = UINavigationBarAppearance()
         let backButton = UIBarButtonItem()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
@@ -49,7 +37,7 @@ class ExploreController: UIViewController {
         self.navigationItem.largeTitleDisplayMode = .always
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "D&D characters"
-        backButton.title = "Voltar"
+        backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 

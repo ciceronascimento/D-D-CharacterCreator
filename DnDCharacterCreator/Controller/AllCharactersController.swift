@@ -13,18 +13,13 @@ class AllCharactersController: UIViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let coreDataMethods = CoreDataMethods()
-//    var collectionView: UICollectionView = {
-//        let collection = UICollectionView()
-//        collection.translatesAutoresizingMaskIntoConstraints = false
-//        return collection
-//    }()
 
     var collectionView: UICollectionView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = coreDataMethods.fetchCharacters(context: context)
-        coreDataMethods.printAllCharacters(context: context)
+
+//        _ = coreDataMethods.fetchCharacters(context: context)
 
         sheets = coreDataMethods.fetchCharacters(context: context)
 
@@ -51,12 +46,12 @@ class AllCharactersController: UIViewController {
         navigationItem.standardAppearance = appearance
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "My Characters"
-        backButton.title = "Voltar"
+        backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
     func configConstraints() {
-        collectionView?.backgroundColor = .white
+        collectionView?.backgroundColor = .systemGroupedBackground
         collectionView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         collectionView?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         collectionView?.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true

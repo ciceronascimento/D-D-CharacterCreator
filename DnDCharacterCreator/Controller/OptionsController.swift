@@ -38,20 +38,17 @@ class OptionsController: UIViewController {
     func loadTableView() {
         Task {
             screen.options = await API.getData(route: route).results ?? []
-            for option in screen.options {
-                print(option.name)
-            }
             self.screen.tableView.reloadData()
         }
     }
     func configNavBar() {
         let backButton = UIBarButtonItem()
-        backButton.title = "Voltar"
+        backButton.title = "Back"
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         let appearance = UINavigationBarAppearance()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
         navigationItem.standardAppearance = appearance
-        navigationItem.title = "Selecione o tipo"
+        navigationItem.title = "Select your \(route)"
     }
 
 }
@@ -61,7 +58,7 @@ extension OptionsController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let option = screen.options[indexPath.row]
-        print(option.name)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = option.name
         return cell
@@ -71,7 +68,6 @@ extension OptionsController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
 
         delegate?.sendInfo(text: option.name, routeChoose: route)
-        print(option.name)
         navigationController?.popViewController(animated: true)
     }
 }
