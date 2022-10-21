@@ -16,13 +16,13 @@
 		DD12AFD529016CB700F044C8 /* Character+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFD329016CB700F044C8 /* Character+CoreDataProperties.swift */; };
 		DD12AFD729016EE300F044C8 /* CoreDataMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFD629016EE300F044C8 /* CoreDataMethods.swift */; };
 		DD12AFDA29018A4200F044C8 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFD929018A4200F044C8 /* CharacterCell.swift */; };
+		DD12AFDD2902BAB600F044C8 /* CharacterSheetControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD12AFDC2902BAB600F044C8 /* CharacterSheetControllerTests.swift */; };
 		DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAA28F4536A0003566F /* AppDelegate.swift */; };
 		DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAC28F4536A0003566F /* SceneDelegate.swift */; };
 		DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DAE28F4536A0003566F /* ViewController.swift */; };
 		DDA57DB528F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DB328F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld */; };
 		DDA57DB728F4536B0003566F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDA57DB628F4536B0003566F /* Assets.xcassets */; };
 		DDA57DBA28F4536B0003566F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA57DB828F4536B0003566F /* LaunchScreen.storyboard */; };
-		DDA57DC528F4536B0003566F /* D_D_CharacterCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DC428F4536B0003566F /* D_D_CharacterCreatorTests.swift */; };
 		DDA57DCF28F4536B0003566F /* D_D_CharacterCreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */; };
 		DDA57DD128F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */; };
 		DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE028F45AD60003566F /* CharacterModel.swift */; };
@@ -64,7 +64,8 @@
 		DD12AFD329016CB700F044C8 /* Character+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DD12AFD629016EE300F044C8 /* CoreDataMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMethods.swift; sourceTree = "<group>"; };
 		DD12AFD929018A4200F044C8 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
-		DDA57DA728F4536A0003566F /* D&D-CharacterCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&D-CharacterCreator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD12AFDC2902BAB600F044C8 /* CharacterSheetControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheetControllerTests.swift; sourceTree = "<group>"; };
+		DDA57DA728F4536A0003566F /* DnDCharacterCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDCharacterCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA57DAA28F4536A0003566F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAC28F4536A0003566F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DDA57DAE28F4536A0003566F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,9 +73,8 @@
 		DDA57DB628F4536B0003566F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDA57DB928F4536B0003566F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA57DBB28F4536B0003566F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DDA57DC028F4536B0003566F /* D&D-CharacterCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D&D-CharacterCreatorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DDA57DC428F4536B0003566F /* D_D_CharacterCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorTests.swift; sourceTree = "<group>"; };
-		DDA57DCA28F4536B0003566F /* D&D-CharacterCreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "D&D-CharacterCreatorUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA57DC028F4536B0003566F /* DnDCharacterCreatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDCharacterCreatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDA57DCA28F4536B0003566F /* DnDCharacterCreatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDCharacterCreatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITests.swift; sourceTree = "<group>"; };
 		DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DDA57DE028F45AD60003566F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
@@ -122,12 +122,20 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		DD12AFDB2902BA6500F044C8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD12AFDC2902BAB600F044C8 /* CharacterSheetControllerTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DDA57D9E28F4536A0003566F = {
 			isa = PBXGroup;
 			children = (
-				DDA57DA928F4536A0003566F /* D&D-CharacterCreator */,
-				DDA57DC328F4536B0003566F /* D&D-CharacterCreatorTests */,
-				DDA57DCD28F4536B0003566F /* D&D-CharacterCreatorUITests */,
+				DDA57DA928F4536A0003566F /* DnDCharacterCreator */,
+				DDA57DC328F4536B0003566F /* DnDCharacterCreatorTests */,
+				DDA57DCD28F4536B0003566F /* DnDCharacterCreatorUITests */,
 				DDA57DA828F4536A0003566F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,14 +143,14 @@
 		DDA57DA828F4536A0003566F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDA57DA728F4536A0003566F /* D&D-CharacterCreator.app */,
-				DDA57DC028F4536B0003566F /* D&D-CharacterCreatorTests.xctest */,
-				DDA57DCA28F4536B0003566F /* D&D-CharacterCreatorUITests.xctest */,
+				DDA57DA728F4536A0003566F /* DnDCharacterCreator.app */,
+				DDA57DC028F4536B0003566F /* DnDCharacterCreatorTests.xctest */,
+				DDA57DCA28F4536B0003566F /* DnDCharacterCreatorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DDA57DA928F4536A0003566F /* D&D-CharacterCreator */ = {
+		DDA57DA928F4536A0003566F /* DnDCharacterCreator */ = {
 			isa = PBXGroup;
 			children = (
 				DDA57DAA28F4536A0003566F /* AppDelegate.swift */,
@@ -158,24 +166,24 @@
 				DDA57DBB28F4536B0003566F /* Info.plist */,
 				DDA57DB328F4536A0003566F /* D_D_CharacterCreator.xcdatamodeld */,
 			);
-			path = "D&D-CharacterCreator";
+			path = DnDCharacterCreator;
 			sourceTree = "<group>";
 		};
-		DDA57DC328F4536B0003566F /* D&D-CharacterCreatorTests */ = {
+		DDA57DC328F4536B0003566F /* DnDCharacterCreatorTests */ = {
 			isa = PBXGroup;
 			children = (
-				DDA57DC428F4536B0003566F /* D_D_CharacterCreatorTests.swift */,
+				DD12AFDB2902BA6500F044C8 /* Controller */,
 			);
-			path = "D&D-CharacterCreatorTests";
+			path = DnDCharacterCreatorTests;
 			sourceTree = "<group>";
 		};
-		DDA57DCD28F4536B0003566F /* D&D-CharacterCreatorUITests */ = {
+		DDA57DCD28F4536B0003566F /* DnDCharacterCreatorUITests */ = {
 			isa = PBXGroup;
 			children = (
 				DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */,
 				DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */,
 			);
-			path = "D&D-CharacterCreatorUITests";
+			path = DnDCharacterCreatorUITests;
 			sourceTree = "<group>";
 		};
 		DDA57DDD28F45AAB0003566F /* Model */ = {
@@ -235,9 +243,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DDA57DA628F4536A0003566F /* D&D-CharacterCreator */ = {
+		DDA57DA628F4536A0003566F /* DnDCharacterCreator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDA57DD428F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreator" */;
+			buildConfigurationList = DDA57DD428F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreator" */;
 			buildPhases = (
 				DDA57DA328F4536A0003566F /* Sources */,
 				DDA57DA428F4536A0003566F /* Frameworks */,
@@ -248,14 +256,14 @@
 			);
 			dependencies = (
 			);
-			name = "D&D-CharacterCreator";
+			name = DnDCharacterCreator;
 			productName = "D&D-CharacterCreator";
-			productReference = DDA57DA728F4536A0003566F /* D&D-CharacterCreator.app */;
+			productReference = DDA57DA728F4536A0003566F /* DnDCharacterCreator.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DDA57DBF28F4536B0003566F /* D&D-CharacterCreatorTests */ = {
+		DDA57DBF28F4536B0003566F /* DnDCharacterCreatorTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDA57DD728F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreatorTests" */;
+			buildConfigurationList = DDA57DD728F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreatorTests" */;
 			buildPhases = (
 				DDA57DBC28F4536B0003566F /* Sources */,
 				DDA57DBD28F4536B0003566F /* Frameworks */,
@@ -266,14 +274,14 @@
 			dependencies = (
 				DDA57DC228F4536B0003566F /* PBXTargetDependency */,
 			);
-			name = "D&D-CharacterCreatorTests";
+			name = DnDCharacterCreatorTests;
 			productName = "D&D-CharacterCreatorTests";
-			productReference = DDA57DC028F4536B0003566F /* D&D-CharacterCreatorTests.xctest */;
+			productReference = DDA57DC028F4536B0003566F /* DnDCharacterCreatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DDA57DC928F4536B0003566F /* D&D-CharacterCreatorUITests */ = {
+		DDA57DC928F4536B0003566F /* DnDCharacterCreatorUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DDA57DDA28F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreatorUITests" */;
+			buildConfigurationList = DDA57DDA28F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreatorUITests" */;
 			buildPhases = (
 				DDA57DC628F4536B0003566F /* Sources */,
 				DDA57DC728F4536B0003566F /* Frameworks */,
@@ -284,9 +292,9 @@
 			dependencies = (
 				DDA57DCC28F4536B0003566F /* PBXTargetDependency */,
 			);
-			name = "D&D-CharacterCreatorUITests";
+			name = DnDCharacterCreatorUITests;
 			productName = "D&D-CharacterCreatorUITests";
-			productReference = DDA57DCA28F4536B0003566F /* D&D-CharacterCreatorUITests.xctest */;
+			productReference = DDA57DCA28F4536B0003566F /* DnDCharacterCreatorUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -312,7 +320,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DDA57DA228F4536A0003566F /* Build configuration list for PBXProject "D&D-CharacterCreator" */;
+			buildConfigurationList = DDA57DA228F4536A0003566F /* Build configuration list for PBXProject "DnDCharacterCreator" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -325,9 +333,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DDA57DA628F4536A0003566F /* D&D-CharacterCreator */,
-				DDA57DBF28F4536B0003566F /* D&D-CharacterCreatorTests */,
-				DDA57DC928F4536B0003566F /* D&D-CharacterCreatorUITests */,
+				DDA57DA628F4536A0003566F /* DnDCharacterCreator */,
+				DDA57DBF28F4536B0003566F /* DnDCharacterCreatorTests */,
+				DDA57DC928F4536B0003566F /* DnDCharacterCreatorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -414,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDA57DC528F4536B0003566F /* D_D_CharacterCreatorTests.swift in Sources */,
+				DD12AFDD2902BAB600F044C8 /* CharacterSheetControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,12 +440,12 @@
 /* Begin PBXTargetDependency section */
 		DDA57DC228F4536B0003566F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DDA57DA628F4536A0003566F /* D&D-CharacterCreator */;
+			target = DDA57DA628F4536A0003566F /* DnDCharacterCreator */;
 			targetProxy = DDA57DC128F4536B0003566F /* PBXContainerItemProxy */;
 		};
 		DDA57DCC28F4536B0003566F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DDA57DA628F4536A0003566F /* D&D-CharacterCreator */;
+			target = DDA57DA628F4536A0003566F /* DnDCharacterCreator */;
 			targetProxy = DDA57DCB28F4536B0003566F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -573,11 +581,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2D837DJ3YC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "D&D-CharacterCreator/Info.plist";
+				INFOPLIST_FILE = DnDCharacterCreator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -587,8 +595,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreator";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -600,11 +609,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2D837DJ3YC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "D&D-CharacterCreator/Info.plist";
+				INFOPLIST_FILE = DnDCharacterCreator/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -614,8 +623,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreator";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -627,18 +637,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2D837DJ3YC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreatorTests";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D&D-CharacterCreator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/D&D-CharacterCreator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDCharacterCreator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DnDCharacterCreator";
 			};
 			name = Debug;
 		};
@@ -647,18 +658,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2D837DJ3YC;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreatorTests";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreatorTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/D&D-CharacterCreator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/D&D-CharacterCreator";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDCharacterCreator.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DnDCharacterCreator";
 			};
 			name = Release;
 		};
@@ -671,7 +683,7 @@
 				DEVELOPMENT_TEAM = 2D837DJ3YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreatorUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -689,7 +701,7 @@
 				DEVELOPMENT_TEAM = 2D837DJ3YC;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ciceronascimento.D-D-CharacterCreatorUITests";
+				PRODUCT_BUNDLE_IDENTIFIER = ciceronascimento.DnDCharacterCreatorUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -701,7 +713,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DDA57DA228F4536A0003566F /* Build configuration list for PBXProject "D&D-CharacterCreator" */ = {
+		DDA57DA228F4536A0003566F /* Build configuration list for PBXProject "DnDCharacterCreator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA57DD228F4536B0003566F /* Debug */,
@@ -710,7 +722,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDA57DD428F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreator" */ = {
+		DDA57DD428F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA57DD528F4536B0003566F /* Debug */,
@@ -719,7 +731,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDA57DD728F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreatorTests" */ = {
+		DDA57DD728F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreatorTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA57DD828F4536B0003566F /* Debug */,
@@ -728,7 +740,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DDA57DDA28F4536B0003566F /* Build configuration list for PBXNativeTarget "D&D-CharacterCreatorUITests" */ = {
+		DDA57DDA28F4536B0003566F /* Build configuration list for PBXNativeTarget "DnDCharacterCreatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DDA57DDB28F4536B0003566F /* Debug */,
