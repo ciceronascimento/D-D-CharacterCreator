@@ -60,6 +60,7 @@ class AllCharactersController: UIViewController {
 }
 
 extension AllCharactersController: UICollectionViewDataSource {
+    // MARK: Funções de configurações do DataShource da CollectionView
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sheets.count
     }
@@ -73,7 +74,6 @@ extension AllCharactersController: UICollectionViewDataSource {
             for: indexPath) as? CharacterCell else {
             return UICollectionViewCell()
         }
-        // MARK: Configuração para sombras e opacidades
         cell.layer.shadowColor = UIColor(.black).cgColor
         cell.layer.shadowRadius = 3
         cell.layer.shadowOpacity = 0.9

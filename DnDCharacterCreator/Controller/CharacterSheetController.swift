@@ -70,6 +70,8 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         tableView.backgroundColor = .systemGroupedBackground
     }
 
+    /// Função de configuração do displayAlert
+    /// - Parameter event: String para verificar caso de erro ou success
     func displayAlert (event: String) {
         switch event {
         case "error":
@@ -97,10 +99,12 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    /// Faz uma navegação para a view anterior
     func popView() {
         navigationController?.popViewController(animated: true)
     }
 
+    /// Configurações da barra de navegação
     func configNavBar() {
         let appearance = UINavigationBarAppearance()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
@@ -112,6 +116,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         navigationItem.title = "Character Sheet"
     }
 
+    /// Adiciona os dados fornecidos ao CoreData e mostra um displayAlert
     @objc func saveCoreData() {
         let nameCharacter = textField.text!
         if nameCharacter == "" || secondaryTextRace == "" || secondaryTextClass == "" {
@@ -127,6 +132,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    /// Configura as constraints
     func configConstraints() {
         NSLayoutConstraint.activate([
             textField.heightAnchor.constraint(equalToConstant: 50),
@@ -201,6 +207,7 @@ extension CharacterSheetController: OptionsDelegate {
 }
 
 extension UITextField {
+    /// Funções para configurar padding no textField
     func setLeftPaddingPoints(_ amount: CGFloat) {
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
         self.leftView = paddingView

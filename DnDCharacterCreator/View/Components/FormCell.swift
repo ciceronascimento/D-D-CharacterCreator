@@ -56,6 +56,8 @@ class FormCell: UITableViewCell {
             placeHolderLabelField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8)
         ])
     }
+    /// Função para que a celula selecionada tenha a animação
+    /// - Parameters:
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

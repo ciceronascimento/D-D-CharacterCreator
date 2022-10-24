@@ -28,8 +28,8 @@ class ExploreController: UIViewController {
         collectionView?.backgroundColor = .secondarySystemGroupedBackground
     }
 
+    /// Configura a navBar
     func configNavBar() {
-        // MARK: Configura a aparencia da navbar, cor do titulo, texto da nav title e botão voltar
         let appearance = UINavigationBarAppearance()
         let backButton = UIBarButtonItem()
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.systemRed]
@@ -41,6 +41,7 @@ class ExploreController: UIViewController {
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
     }
 
+    /// Configura as constraints
     func collectionConstraints() {
         collectionView?.translatesAutoresizingMaskIntoConstraints = false
         collectionView?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -52,6 +53,7 @@ class ExploreController: UIViewController {
 
 extension ExploreController: UICollectionViewDataSource {
 
+    // MARK: Funções de configurações do DataSource da CollectionView
     func collectionView (_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
@@ -89,6 +91,7 @@ extension ExploreController: UICollectionViewDataSource {
 
 extension ExploreController: UICollectionViewDelegate {
 
+    // MARK: Funções de configurações do Delegate da CollectionView
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Verifica o index do card e faz a navegação correspondente ao título
         switch indexPath.row {

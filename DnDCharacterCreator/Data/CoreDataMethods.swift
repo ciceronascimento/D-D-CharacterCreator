@@ -9,6 +9,9 @@ import Foundation
 import CoreData
 
 class CoreDataMethods {
+    /// Função para buscar no banco
+    /// - Parameter context: Contexto do CoreData
+    /// - Returns: Um array do tipo Character
     func fetchCharacters(context: NSManagedObjectContext) -> [Character] {
         do {
             let characterRequest = Character.fetchRequest() as NSFetchRequest<Character>
@@ -20,6 +23,13 @@ class CoreDataMethods {
         }
     }
 
+    /// Função para criar um novo character
+    /// - Parameters:
+    ///   - name: Nome do char
+    ///   - race: Raça escolhida
+    ///   - classes: Classe escolhida
+    ///   - context: context do CoreData
+    /// - Returns: Retorna uma instancia do tipo Character
     func createCharacter(name: String, race: String, classes: String, context: NSManagedObjectContext) -> Character {
         let newCharacter = Character(context: context)
         newCharacter.name = name
@@ -28,6 +38,9 @@ class CoreDataMethods {
         return newCharacter
     }
 
+    /// Salva o char no CoreData
+    /// - Parameter context: contexto do core data
+    /// - Returns: Booleano
     func saveCharacterCoreData(context: NSManagedObjectContext) -> Bool {
 
         do {

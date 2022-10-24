@@ -35,12 +35,14 @@ class OptionsController: UIViewController {
         screen.tableView.dataSource = self
     }
 
+    /// Roda a função de requisição da API
     func loadTableView() {
         Task {
             screen.options = await API.getData(route: route).results ?? []
             self.screen.tableView.reloadData()
         }
     }
+    /// Configura a barra de navegação
     func configNavBar() {
         let backButton = UIBarButtonItem()
         backButton.title = "Back"
@@ -53,6 +55,7 @@ class OptionsController: UIViewController {
 
 }
 extension OptionsController: UITableViewDelegate, UITableViewDataSource {
+    // MARK: Funções de configurações de delegate e DataSource da CollectionView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return screen.options.count
     }
@@ -73,5 +76,9 @@ extension OptionsController: UITableViewDelegate, UITableViewDataSource {
 }
 
 protocol OptionsDelegate: AnyObject {
+    /// Função de delegate para enviar informações para CharacterSheetController
+    /// - Parameters:
+    ///   - text: Texto relacionado a tableViewRow clicada
+    ///   - routeChoose: Tipo de rota escolhida pelo usuário
     func sendInfo(text: String, routeChoose: String)
 }
