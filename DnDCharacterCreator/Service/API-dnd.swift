@@ -8,6 +8,9 @@
 import Foundation
 
 class API {
+    /// Função para requisição da API
+    /// - Parameter route: Passa a rota escolhida pela função returnURLRequest
+    /// - Returns: Retorna os dados da requisição
     static func getData(route: String) async -> APIModel {
         let url = self.returnURLRequest(route: route)
         var urlRequest = URLRequest(url: url)
@@ -23,6 +26,9 @@ class API {
         return APIModel(count: 1, results: [Result(index: "", name: "", url: "")])
     }
 
+    /// Função que define a rota selecionada
+    /// - Parameter route: Rota escolhida
+    /// - Returns: Retorna a URL da requisição
     static func returnURLRequest(route: String) -> URL {
         switch route {
         case APIRoute.races.rawValue:
