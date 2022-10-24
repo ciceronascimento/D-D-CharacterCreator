@@ -107,7 +107,7 @@ class CharacterSheetController: UIViewController, UITextFieldDelegate {
         navigationItem.standardAppearance = appearance
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Create",
                                                                  style: .plain,
-                                                                 target: ExploreView(),
+                                                                 target: self,
                                                                  action: #selector(saveCoreData))
         navigationItem.title = "Character Sheet"
     }

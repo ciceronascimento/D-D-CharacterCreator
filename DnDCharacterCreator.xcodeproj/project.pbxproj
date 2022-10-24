@@ -26,15 +26,11 @@
 		DDA57DCF28F4536B0003566F /* D_D_CharacterCreatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */; };
 		DDA57DD128F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */; };
 		DDA57DE128F45AD60003566F /* CharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE028F45AD60003566F /* CharacterModel.swift */; };
-		DDA57DE328F45AF60003566F /* API-notion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE228F45AF60003566F /* API-notion.swift */; };
 		DDA57DE528F45B0E0003566F /* API-dnd.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE428F45B0E0003566F /* API-dnd.swift */; };
-		DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DE928F45C140003566F /* CharacterSheetView.swift */; };
 		DDA57DEC28F45D130003566F /* CharacterSheetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DEB28F45D130003566F /* CharacterSheetController.swift */; };
 		DDA57DF028F4A9CF0003566F /* ExploreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DEF28F4A9CF0003566F /* ExploreController.swift */; };
-		DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF128F4A9EA0003566F /* ExploreView.swift */; };
 		DDA57DF528F4ABC10003566F /* CardHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF428F4ABC10003566F /* CardHomeCell.swift */; };
 		DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DF928F5B45B0003566F /* AllCharactersController.swift */; };
-		DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA57DFB28F5B4730003566F /* AllCharactersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,15 +74,11 @@
 		DDA57DCE28F4536B0003566F /* D_D_CharacterCreatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITests.swift; sourceTree = "<group>"; };
 		DDA57DD028F4536B0003566F /* D_D_CharacterCreatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = D_D_CharacterCreatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DDA57DE028F45AD60003566F /* CharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModel.swift; sourceTree = "<group>"; };
-		DDA57DE228F45AF60003566F /* API-notion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-notion.swift"; sourceTree = "<group>"; };
 		DDA57DE428F45B0E0003566F /* API-dnd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API-dnd.swift"; sourceTree = "<group>"; };
-		DDA57DE928F45C140003566F /* CharacterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheetView.swift; sourceTree = "<group>"; };
 		DDA57DEB28F45D130003566F /* CharacterSheetController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheetController.swift; sourceTree = "<group>"; };
 		DDA57DEF28F4A9CF0003566F /* ExploreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreController.swift; sourceTree = "<group>"; };
-		DDA57DF128F4A9EA0003566F /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		DDA57DF428F4ABC10003566F /* CardHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHomeCell.swift; sourceTree = "<group>"; };
 		DDA57DF928F5B45B0003566F /* AllCharactersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersController.swift; sourceTree = "<group>"; };
-		DDA57DFB28F5B4730003566F /* AllCharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +193,6 @@
 		DDA57DDE28F45AB30003566F /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				DDA57DE228F45AF60003566F /* API-notion.swift */,
 				DDA57DE428F45B0E0003566F /* API-dnd.swift */,
 			);
 			path = Service;
@@ -222,9 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				DDA57DF328F4AB730003566F /* Components */,
-				DDA57DE928F45C140003566F /* CharacterSheetView.swift */,
-				DDA57DF128F4A9EA0003566F /* ExploreView.swift */,
-				DDA57DFB28F5B4730003566F /* AllCharactersView.swift */,
 				DD12AFC928FED80200F044C8 /* OptionsView.swift */,
 			);
 			path = View;
@@ -402,16 +390,12 @@
 				DD12AFC428FD745700F044C8 /* FormCell.swift in Sources */,
 				DD12AFCC28FEE5B100F044C8 /* OptionsController.swift in Sources */,
 				DDA57DAF28F4536A0003566F /* ViewController.swift in Sources */,
-				DDA57DEA28F45C140003566F /* CharacterSheetView.swift in Sources */,
 				DD12AFD429016CB700F044C8 /* Character+CoreDataClass.swift in Sources */,
-				DDA57DE328F45AF60003566F /* API-notion.swift in Sources */,
 				DDA57DAB28F4536A0003566F /* AppDelegate.swift in Sources */,
 				DD12AFD529016CB700F044C8 /* Character+CoreDataProperties.swift in Sources */,
 				DD12AFCA28FED80200F044C8 /* OptionsView.swift in Sources */,
 				DDA57DF028F4A9CF0003566F /* ExploreController.swift in Sources */,
-				DDA57DFC28F5B4730003566F /* AllCharactersView.swift in Sources */,
 				DD12AFD729016EE300F044C8 /* CoreDataMethods.swift in Sources */,
-				DDA57DF228F4A9EA0003566F /* ExploreView.swift in Sources */,
 				DDA57DFA28F5B45B0003566F /* AllCharactersController.swift in Sources */,
 				DD12AFCE28FF161F00F044C8 /* Routes.swift in Sources */,
 				DDA57DAD28F4536A0003566F /* SceneDelegate.swift in Sources */,
